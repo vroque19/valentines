@@ -1,17 +1,15 @@
 from flask import Flask, url_for, render_template
 
-def create_app():
-    app = Flask(__name__)
-    @app.route('/')
-    def main():
-        return render_template('index.html')
 
-    @app.route('/yes')
-    def handleYes():
-        return render_template('yes.html')
+app = Flask(__name__)
+@app.route('/')
+def main():
+    return render_template('index.html')
 
-    return app
+@app.route('/yes')
+def handleYes():
+    return render_template('yes.html')
+
 
 if __name__ == "__main__":
-    app = create_app()
-    app.run(debug=True)
+    app.run()
