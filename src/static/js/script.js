@@ -6,7 +6,7 @@ const no_btn = document.querySelector('.no-btn');
 yes_btn.addEventListener("click", handleYes);
 no_btn.addEventListener("mouseover", changeImage);
 no_btn.addEventListener("mouseout", restoreImage);
-no_btn.addEventListener("click", moveButton)
+no_btn.addEventListener("click", handleNo)
 document.addEventListener("mouseover", (event) => {
     var mouseX = event.clientX;
     var mouseY = event.clientY;
@@ -22,36 +22,39 @@ function restoreImage() {
     gif.src = "static/images/cat.gif";
 }
 
-function moveButton() {
-    alert("wrong answer :3")
-    const noBtnRect = no_btn.getBoundingClientRect();
-    const yesBtnRect = yes_btn.getBoundingClientRect();
-    const maxX = 1000 - noBtnRect.width;
-    const maxY = 500 - noBtnRect.height;
-    // 500, 80; 890, 80; 890, 429; 500, 429
-    console.log(yesBtnRect);
-    let randX;
-    let randY;
-    randX = Math.random() * maxX;
-    randY = Math.random() * maxY;
-    if(isOverlapping(noBtnRect, yesBtnRect)) {
-        randX = (Math.random() * maxX)+20;
-        randY = (Math.random() * maxY)+20;
-    console.log(randX, randY)
-    }
-    
-    no_btn.style.top = randY + "px";
-    no_btn.style.left = randX + "px";
+function handleNo() {
+    alert("wrong answer :3");
 }
 
-function isOverlapping(rect1, rect2) {
-    return (
-        rect1.left < rect2.right &&
-        rect1.right > rect2.left &&
-        rect1.top < rect2.bottom &&
-        rect1.bottom > rect2.top
-    );
-}
+// function moveButton() {
+//     const noBtnRect = no_btn.getBoundingClientRect();
+//     const yesBtnRect = yes_btn.getBoundingClientRect();
+//     const maxX = 1000 - noBtnRect.width;
+//     const maxY = 500 - noBtnRect.height;
+//     // 500, 80; 890, 80; 890, 429; 500, 429
+//     console.log(yesBtnRect);
+//     let randX;
+//     let randY;
+//     randX = Math.random() * maxX;
+//     randY = Math.random() * maxY;
+//     if(isOverlapping(noBtnRect, yesBtnRect)) {
+//         randX = (Math.random() * maxX)+20;
+//         randY = (Math.random() * maxY)+20;
+//     console.log(randX, randY)
+//     }
+    
+//     no_btn.style.top = randY + "px";
+//     no_btn.style.left = randX + "px";
+// }
+
+// function isOverlapping(rect1, rect2) {
+//     return (
+//         rect1.left < rect2.right &&
+//         rect1.right > rect2.left &&
+//         rect1.top < rect2.bottom &&
+//         rect1.bottom > rect2.top
+//     );
+// }
 
 function handleYes() {
     console.log("YAYAYAYYA");
