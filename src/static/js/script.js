@@ -25,14 +25,14 @@ function restoreImage() {
 function moveButton() {
     const noBtnRect = no_btn.getBoundingClientRect();
     const yesBtnRect = yes_btn.getBoundingClientRect();
-    const maxX = 900 - noBtnRect.width;
+    const maxX = 1000 - noBtnRect.width;
     const maxY = 500 - noBtnRect.height;
     // 500, 80; 890, 80; 890, 429; 500, 429
     console.log(yesBtnRect);
     let randX;
     let randY;
-    randX = (Math.random() * maxX)+20;
-    randY = (Math.random() * maxY)+20;
+    randX = Math.random() * maxX;
+    randY = Math.random() * maxY;
     if(isOverlapping(noBtnRect, yesBtnRect)) {
         randX = (Math.random() * maxX)+20;
         randY = (Math.random() * maxY)+20;
