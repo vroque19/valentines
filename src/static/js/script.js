@@ -23,6 +23,7 @@ function restoreImage() {
 }
 
 function moveButton() {
+    alert("wrong answer :3")
     const noBtnRect = no_btn.getBoundingClientRect();
     const yesBtnRect = yes_btn.getBoundingClientRect();
     const maxX = 1000 - noBtnRect.width;
